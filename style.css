@@ -1,7 +1,51 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #calculatorBody {
     height: 575px;
     width: 400px;
     margin: auto;
     background-color: black;
+    border-radius: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#display {
+    width: 385px;
+    height: 40px;
+    background-color: lightgreen;
+    font-size: 20pt;
+    border-radius: 1%;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+
+#numberContainer {
+    height: 220px;
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25pt;
+    margin-left: 8pt;
+}
+
+#numberButton {
+    height: 50px;
+    min-width: 70px;
+    max-width: 70px;
+    background-color: white;
     border-radius: 5%;
+    margin: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
 }
