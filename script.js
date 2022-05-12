@@ -1,25 +1,38 @@
 //initial calculator functions
 
 //adding 
-const addition = function(a, b) {
-    let c = a + b;
-    return c;
+const add = function(firstNumber, secondNumber) {
+    let result = firstNumber + secondNumber;
+    return result;
 }
 
 //subtracting 
-const subtraction = function(a, b) {
-    let c = a - b;
-    return c;
+const subtract = function(firstNumber, secondNumber) {
+    let result = firstNumber - secondNumber;
+    return result;
 }
 
 //multiplication
-const multiply = function(a, b) {
-    let c = a * b;
-    return c;
+const multiply = function(firstNumber, secondNumber) {
+    let result = firstNumber * secondNumber;
+    return result;
 }
 
 //division
-const divide = function(a, b) {
-    let c = a / b;
-    return c;
+const divide = function(firstNumber, secondNumber) {
+    let result = firstNumber / secondNumber;
+    return result;
+}
+
+//function to operate
+let operate = function(operand, firstNumber, secondNumber) {
+    if(operand === '+') {
+        add(firstNumber, secondNumber);
+    } else if (operand === '-') {
+        subtract(firstNumber, secondNumber);
+    } else if (operand === "*") {
+        multiply(firstNumber, secondNumber);
+    } else if (operand === "/") {
+        divide(firstNumber, secondNumber);
+    }
 }
