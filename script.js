@@ -46,11 +46,15 @@ numberBtns.forEach( element => {
      upperDisplay.innerHTML = '';
  })
 
- //operand functions =============================================================================
+ //operand functions =====================================================================================
  //addition
  const additionBtn = document.getElementById("addition");
  additionBtn.addEventListener("click", () => {
-    if(display.innerHTML != '') {
+    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
+        add(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+     } else if(display.innerHTML != '') {
         upperDisplay.innerHTML = display.innerHTML;
         display.innerHTML = '';
         operand = '+';
@@ -60,7 +64,11 @@ numberBtns.forEach( element => {
  //subtraction
  const subtractionBtn = document.getElementById("subtraction");
  subtractionBtn.addEventListener("click", () => {
-    if(display.innerHTML != '') {
+    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
+        subtract(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+     } else if(display.innerHTML != '') {
         upperDisplay.innerHTML = display.innerHTML;
         display.innerHTML = '';
         operand = '-';
@@ -70,7 +78,11 @@ numberBtns.forEach( element => {
  //multiplication
  const multiplicationBtn = document.getElementById("multiplication");
  multiplicationBtn.addEventListener("click", () => {
-    if(display.innerHTML != '') {
+    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
+        multiply(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+     } else if(display.innerHTML != '') {
         upperDisplay.innerHTML = display.innerHTML;
         display.innerHTML = '';
         operand = '*';
@@ -80,7 +92,11 @@ numberBtns.forEach( element => {
  //division
  const divisionBtn = document.getElementById("division");
  divisionBtn.addEventListener("click", () => {
-    if(display.innerHTML != '') {
+    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
+        divide(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+     } else if(display.innerHTML != '') {
         upperDisplay.innerHTML = display.innerHTML;
         display.innerHTML = '';
         operand = '/';
