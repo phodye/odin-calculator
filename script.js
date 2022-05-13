@@ -36,3 +36,21 @@ let operate = function(operand, firstNumber, secondNumber) {
         divide(firstNumber, secondNumber);
     }
 }
+
+//assign numbers
+const display = document.getElementById("display");
+const numberBtns = document.querySelectorAll('.numberButton');
+numberBtns.forEach( element => {
+   element.addEventListener('click', storeValue);
+ })
+
+ function storeValue(e) {
+   const value = e.target.value;
+   display.innerHTML += value;
+ }
+
+ //clear numbers
+ const clearBtn = document.getElementById("clear");
+ clearBtn.addEventListener("click", () =>{
+     display.innerHTML = '';
+ })
