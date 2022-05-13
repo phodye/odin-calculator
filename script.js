@@ -1,4 +1,4 @@
-//initial calculator functions
+// calculator functions =============================================================================
 
 //adding 
 const add = function(firstNumber, secondNumber) {
@@ -10,34 +10,22 @@ const add = function(firstNumber, secondNumber) {
 //subtracting 
 const subtract = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) - parseInt(secondNumber);
-    return result;
+    display.innerHTML = result;
 }
 
 //multiplication
 const multiply = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) * parseInt(secondNumber);
-    return result;
+    display.innerHTML = result;
 }
 
 //division
 const divide = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) / parseInt(secondNumber);
-    return result;
+    display.innerHTML = result;
 }
 
-//function to operate
-let operate = function(operand, firstNumber, secondNumber) {
-    if(operand === '+') {
-        add(firstNumber, secondNumber);
-    } else if (operand === '-') {
-        subtract(firstNumber, secondNumber);
-    } else if (operand === "*") {
-        multiply(firstNumber, secondNumber);
-    } else if (operand === "/") {
-        divide(firstNumber, secondNumber);
-    }
-}
-
+// number/display functions =============================================================================
 //assign numbers
 const upperDisplay = document.getElementById("upperDisplay");
 const display = document.getElementById("display");
@@ -58,7 +46,8 @@ numberBtns.forEach( element => {
      upperDisplay.innerHTML = '';
  })
 
- //operand function
+ //operand functions =============================================================================
+ //addition
  const additionBtn = document.getElementById("addition");
  additionBtn.addEventListener("click", () => {
     if(display.innerHTML != '') {
@@ -68,12 +57,52 @@ numberBtns.forEach( element => {
         return operand;
      } 
  })
+ //subtraction
+ const subtractionBtn = document.getElementById("subtraction");
+ subtractionBtn.addEventListener("click", () => {
+    if(display.innerHTML != '') {
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+        operand = '-';
+        return operand;
+     } 
+ })
+ //multiplication
+ const multiplicationBtn = document.getElementById("multiplication");
+ multiplicationBtn.addEventListener("click", () => {
+    if(display.innerHTML != '') {
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+        operand = '*';
+        return operand;
+     } 
+ })
+ //division
+ const divisionBtn = document.getElementById("division");
+ divisionBtn.addEventListener("click", () => {
+    if(display.innerHTML != '') {
+        upperDisplay.innerHTML = display.innerHTML;
+        display.innerHTML = '';
+        operand = '/';
+        return operand;
+     } 
+ })
 
+ 
  //equals function
  const equalsBtn = document.getElementById("equals");
  equalsBtn.addEventListener("click", () => {
      if(operand === '+') {
          add(upperDisplay.innerHTML, display.innerHTML)
          upperDisplay.innerHTML = '';
+     } else if (operand === '-') {
+        subtract(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = '';
+     } else if (operand === '*') {
+        multiply(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = '';
+     } else if (operand === '/') {
+        divide(upperDisplay.innerHTML, display.innerHTML)
+        upperDisplay.innerHTML = '';
      }
- })
+})
