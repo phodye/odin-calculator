@@ -1,9 +1,31 @@
+//switch function for main operations ===============================================================
+function switchCalculations() {
+   console.log(operand);
+   switch (operand) {
+      case "+":
+
+         break;
+      case "-":
+
+         break;
+      case "*":
+            
+         break;
+      case "/":
+
+         break;
+    }
+}
+
+
+
+
+
 // calculator functions =============================================================================
 
 //adding 
 const add = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) + parseInt(secondNumber);
-    console.log(result);
     display.innerHTML = result;
 }
 
@@ -50,75 +72,27 @@ numberBtns.forEach( element => {
  //addition
  const additionBtn = document.getElementById("addition");
  additionBtn.addEventListener("click", () => {
-    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
-        add(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-     } else if(display.innerHTML != '') {
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-        operand = '+';
-        return operand;
-     } 
+
  })
  //subtraction
  const subtractionBtn = document.getElementById("subtraction");
  subtractionBtn.addEventListener("click", () => {
-    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
-        subtract(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-     } else if(display.innerHTML != '') {
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-        operand = '-';
-        return operand;
-     } 
+
  })
  //multiplication
  const multiplicationBtn = document.getElementById("multiplication");
  multiplicationBtn.addEventListener("click", () => {
-    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
-        multiply(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-     } else if(display.innerHTML != '') {
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-        operand = '*';
-        return operand;
-     } 
+
  })
  //division
  const divisionBtn = document.getElementById("division");
  divisionBtn.addEventListener("click", () => {
-    if(display.innerHTML != '' && upperDisplay.innerHTML != '') {
-        divide(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-     } else if(display.innerHTML != '') {
-        upperDisplay.innerHTML = display.innerHTML;
-        display.innerHTML = '';
-        operand = '/';
-        return operand;
-     } 
+
  })
 
  
  //equals function
  const equalsBtn = document.getElementById("equals");
  equalsBtn.addEventListener("click", () => {
-     if(operand === '+') {
-         add(upperDisplay.innerHTML, display.innerHTML)
-         upperDisplay.innerHTML = '';
-     } else if (operand === '-') {
-        subtract(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = '';
-     } else if (operand === '*') {
-        multiply(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = '';
-     } else if (operand === '/') {
-        divide(upperDisplay.innerHTML, display.innerHTML)
-        upperDisplay.innerHTML = '';
-     }
+
 })
