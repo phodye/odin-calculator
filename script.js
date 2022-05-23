@@ -31,17 +31,28 @@ const add = function(firstNumber, secondNumber) {
 //subtracting 
 const subtract = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) - parseInt(secondNumber);
-
+    display.innerHTML = result;
+    upperDisplay.innerHTML = '';
+    firstInput = result;
+    secondInput = '';
 }
 
 //multiplication
 const multiply = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) * parseInt(secondNumber);
+    display.innerHTML = result;
+    upperDisplay.innerHTML = '';
+    firstInput = result;
+    secondInput = '';
 }
 
 //division
 const divide = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) / parseInt(secondNumber);
+    display.innerHTML = result;
+    upperDisplay.innerHTML = '';
+    firstInput = result;
+    secondInput = '';
 }
 
 // number/display functions =============================================================================
@@ -99,35 +110,64 @@ numberBtns.forEach( element => {
      operand = '';
  })
 
- //operand functions =====================================================================================
+ //operand button functions =====================================================================================
  //addition
  const additionBtn = document.getElementById("addition");
  additionBtn.addEventListener("click", () => {
-   operand = '+';
+   if (!operand) {
+      operand = '+';
+   }
    storeValue();
    if(firstInput != '' && secondInput != '') {
       switchCalculations();
    }
+   operand = '+';
 })
  //subtraction
  const subtractionBtn = document.getElementById("subtraction");
  subtractionBtn.addEventListener("click", () => {
-
+   if (!operand) {
+      operand = '-';
+   }
+   storeValue();
+   if(firstInput != '' && secondInput != '') {
+      switchCalculations();
+   }
+   operand = '-';
  })
  //multiplication
  const multiplicationBtn = document.getElementById("multiplication");
  multiplicationBtn.addEventListener("click", () => {
- 
+   if (!operand) {
+      operand = '*';
+   }
+   storeValue();
+   if(firstInput != '' && secondInput != '') {
+      switchCalculations();
+   }
+   operand = '*';
  })
  //division
  const divisionBtn = document.getElementById("division");
  divisionBtn.addEventListener("click", () => {
-  
+   if(!operand) {operand = '/';
+   }
+   storeValue();
+   if(firstInput != '' && secondInput != '') {
+      switchCalculations();
+   } 
+   operand = '/';
  })
 
  
  //equals function
  const equalsBtn = document.getElementById("equals");
  equalsBtn.addEventListener("click", () => {
- 
+   if (!secondInput) {
+      secondInput = display.innerHTML;
+   }
+   switchCalculations();
+   firstInput = '';
+   operand = '';
+   secondInput = '';
 })
