@@ -22,45 +22,26 @@ function switchCalculations() {
 //adding 
 const add = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) + parseInt(secondNumber);
-    product = result;
-    display.innerHTML = product;
+    display.innerHTML = result;
     upperDisplay.innerHTML = '';
-    firstInput = '';
+    firstInput = result;
     secondInput = '';
-    storeValue();
 }
 
 //subtracting 
 const subtract = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) - parseInt(secondNumber);
-    product = result;
-    display.innerHTML = product;
-    upperDisplay.innerHTML = '';
-    firstInput = '';
-    secondInput = '';
-    storeValue();
+
 }
 
 //multiplication
 const multiply = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) * parseInt(secondNumber);
-    product = result;
-    display.innerHTML = product;
-    upperDisplay.innerHTML = '';
-    firstInput = '';
-    secondInput = '';
-    storeValue();
 }
 
 //division
 const divide = function(firstNumber, secondNumber) {
     let result = parseInt(firstNumber) / parseInt(secondNumber);
-    product = result;
-    display.innerHTML = product;
-    upperDisplay.innerHTML = '';
-    firstInput = '';
-    secondInput = '';
-    storeValue();
 }
 
 // number/display functions =============================================================================
@@ -80,27 +61,32 @@ numberBtns.forEach( element => {
 
  function assignValue(e) {
    const value = e.target.value;
+   checkDisplay();
    display.innerHTML += value;
  }
 
- //store value
-function storeValue() {
-   if(display.innerHTML != '' && upperDisplay.innerHTML == '') {
-      firstInput = display.innerHTML;
-      display.innerHTML = '';
-      upperDisplay.innerHTML = firstInput;
-      console.log(firstInput);
-      return firstInput;
-   } else if (display.innerHTML != '' && upperDisplay.innerHTML != '') {
-      secondInput = display.innerHTML;
-      console.log(secondInput);
-      return secondInput;
-   }
-}
+ //check display 
+ function checkDisplay() {
+    if (firstInput != '' && upperDisplay.innerHTML == '' && secondInput == '') {
+       upperDisplay.innerHTML = display.innerHTML;
+       display.innerHTML = '';
+    }
+ }
 
-function prepareForNext() {
-   
-}
+ //store value
+ function storeValue() {
+    if(firstInput != '' && secondInput != '') {
+       return;
+    } else if(display.innerHTML != '' && firstInput != '' && operand != '') {
+       secondInput = display.innerHTML;
+       return secondInput;
+    } else if(display.innerHTML != '') {
+      firstInput = display.innerHTML;
+      upperDisplay.innerHTML = firstInput;
+      display.innerHTML = '';
+      return firstInput;
+    }
+ }
 
  //clear numbers
  const clearBtn = document.getElementById("clear");
@@ -117,75 +103,31 @@ function prepareForNext() {
  //addition
  const additionBtn = document.getElementById("addition");
  additionBtn.addEventListener("click", () => {
-   if (!operand) {
-      operand = '+';
-      } 
+   operand = '+';
    storeValue();
-   if (!secondInput) {
-      return;
-   } else if (firstInput != '' && secondInput != '') {
+   if(firstInput != '' && secondInput != '') {
       switchCalculations();
-   }
-   if (operand != '+') {
-      operand = '+';
    }
 })
  //subtraction
  const subtractionBtn = document.getElementById("subtraction");
  subtractionBtn.addEventListener("click", () => {
-   if (!operand) {
-      operand = '-';
-      } 
-   storeValue();
-   if (!secondInput) {
-      return;
-   } else if (firstInput != '' && secondInput != '') {
-      switchCalculations();
-   }
-   if (operand != '-') {
-      operand = '-';
-   }
+
  })
  //multiplication
  const multiplicationBtn = document.getElementById("multiplication");
  multiplicationBtn.addEventListener("click", () => {
-   if (!operand) {
-      operand = '*';
-      }
-   storeValue();
-   if (!secondInput) {
-      return;
-   } else if (firstInput != '' && secondInput != '') {
-      switchCalculations();
-   }
-   if (operand != '*') {
-      operand = '*';
-   }
+ 
  })
  //division
  const divisionBtn = document.getElementById("division");
  divisionBtn.addEventListener("click", () => {
-   if (!operand) {
-      operand = '/';
-      }
-   storeValue();
-   if (!secondInput) {
-      return;
-   } else if (firstInput != '' && secondInput != '') {
-      switchCalculations();
-   }
-   if (operand != '/') {
-      operand = '/';
-   }
+  
  })
 
  
  //equals function
  const equalsBtn = document.getElementById("equals");
  equalsBtn.addEventListener("click", () => {
-    if (!secondInput) {
-       secondInput = display.innerHTML;
-    }
-   switchCalculations();
-   operand = '';
+ 
 })
