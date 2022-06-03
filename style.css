@@ -115,3 +115,12 @@ button:hover {
 #addition:hover, #subtraction:hover, #multiplication:hover, #division:hover, #clear:hover, #equals:hover, #backspace:hover, #decimal:hover, #posNeg:hover, #percent:hover {
     background-color: rgb(162, 188, 215);
 }
+
+#footer {
+    font-size: 10pt;
+    opacity: 90%;
+    text-align: center;
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+    margin-top: 200px;
+    margin-bottom: auto;
+}
