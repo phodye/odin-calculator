@@ -76,6 +76,23 @@ numberBtns.forEach( element => {
    display.innerHTML += value;
  }
 
+ //decimal
+ const decimalButton = document.getElementById("decimal");
+ decimalButton.addEventListener('click', () => {
+   if(display.innerHTML.includes(".")){
+      return
+   } else {
+   display.innerHTML += '.';
+   }
+ })
+
+//backspace
+const backspaceButton = document.getElementById("backspace");
+backspaceButton.addEventListener('click', () => {
+   let newDisplay = display.innerHTML.slice(0, -1);
+   display.innerHTML = newDisplay;
+})
+
  //check display 
  function checkDisplay() {
     if (firstInput != '' && upperDisplay.innerHTML == '' && secondInput == '') {
