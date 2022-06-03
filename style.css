@@ -52,6 +52,7 @@ button:hover {
     margin-right: 4px;
     max-width: 300px;
     font-family: Andale Mono;
+    text-shadow: 0 0 7px rgba(255, 255, 255, 0.325);
 }
 
 #display {
@@ -60,6 +61,7 @@ button:hover {
     margin-right: 4px;
     max-width: 300px;
     font-family: Andale Mono;
+    text-shadow: 0 0 7px rgba(255, 255, 255, 0.325);
 }
 
 #numberContainer {
@@ -71,7 +73,7 @@ button:hover {
     margin-left: 5px;
 }
 
-#addition, #subtraction, #multiplication, #division, #clear, #equals, #backspace, #decimal {
+#addition, #subtraction, #multiplication, #division, #clear, #equals, #backspace, #decimal, #posNeg, #percent {
     height: 50px;
     min-width: 70px;
     max-width: 70px;
@@ -85,8 +87,13 @@ button:hover {
     font-size: 18pt;
 }
 
-#backspace {
+#backspace, #clear, #posNeg, #percent {
     font-size: 12pt;
+    background-color: rgb(182, 222, 255);
+}
+
+#addition, #subtraction, #multiplication, #division {
+    background-color: rgb(146, 148, 255);
 }
 
 .numberButton {
@@ -103,6 +110,6 @@ button:hover {
     font-size: 18pt;
 }
 
-#addition:hover, #subtraction:hover, #multiplication:hover, #division:hover, #clear:hover, #equals:hover, #backspace:hover, #decimal:hover {
+#addition:hover, #subtraction:hover, #multiplication:hover, #division:hover, #clear:hover, #equals:hover, #backspace:hover, #decimal:hover, #posNeg:hover, #percent:hover {
     background-color: rgb(162, 188, 215);
 }

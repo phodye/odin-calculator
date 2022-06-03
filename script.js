@@ -93,6 +93,32 @@ backspaceButton.addEventListener('click', () => {
    display.innerHTML = newDisplay;
 })
 
+//positive negative
+const posnegButton = document.getElementById("posNeg");
+posnegButton.addEventListener('click', () => {
+   if(display.innerHTML.charAt(0) != '-') {
+      let withNegative = '-' + display.innerHTML;
+      display.innerHTML = withNegative;
+   } else {
+      let withoutNegative = display.innerHTML.substring(1);
+      display.innerHTML = withoutNegative;
+   }
+})
+
+//convert to decimal
+const percentButton = document.getElementById("percent");
+percentButton.addEventListener('click', () => {
+   if(display.innerHTML.charAt(0) === "."){
+      let wholeNumber = display.innerHTML.substring(1);
+      display.innerHTML = wholeNumber;
+   } else if (display.innerHTML.includes(".")) {
+      return 
+   } else {
+      let asPercent = '.' + display.innerHTML;
+      display.innerHTML = asPercent;
+   }
+})
+
  //check display 
  function checkDisplay() {
     if (firstInput != '' && upperDisplay.innerHTML == '' && secondInput == '') {
