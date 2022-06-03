@@ -21,7 +21,7 @@ function switchCalculations() {
 
 //adding 
 const add = function(firstNumber, secondNumber) {
-    let result = parseInt(firstNumber) + parseInt(secondNumber);
+    let result = Number(firstNumber) + Number(secondNumber);
     display.innerHTML = result;
     upperDisplay.innerHTML = '';
     firstInput = result;
@@ -30,7 +30,7 @@ const add = function(firstNumber, secondNumber) {
 
 //subtracting 
 const subtract = function(firstNumber, secondNumber) {
-    let result = parseInt(firstNumber) - parseInt(secondNumber);
+    let result = Number(firstNumber) - Number(secondNumber);
     display.innerHTML = result;
     upperDisplay.innerHTML = '';
     firstInput = result;
@@ -39,7 +39,7 @@ const subtract = function(firstNumber, secondNumber) {
 
 //multiplication
 const multiply = function(firstNumber, secondNumber) {
-    let result = parseInt(firstNumber) * parseInt(secondNumber);
+    let result = Number(firstNumber) * Number(secondNumber);
     display.innerHTML = result;
     upperDisplay.innerHTML = '';
     firstInput = result;
@@ -48,7 +48,7 @@ const multiply = function(firstNumber, secondNumber) {
 
 //division
 const divide = function(firstNumber, secondNumber) {
-    let result = parseInt(firstNumber) / parseInt(secondNumber);
+    let result = Number(firstNumber) / Number(secondNumber);
     display.innerHTML = result;
     upperDisplay.innerHTML = '';
     firstInput = result;
