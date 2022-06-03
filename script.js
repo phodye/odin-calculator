@@ -26,7 +26,9 @@ const add = function(firstNumber, secondNumber) {
     upperDisplay.innerHTML = '';
     firstInput = result;
     secondInput = '';
+    return result;
 }
+
 
 //subtracting 
 const subtract = function(firstNumber, secondNumber) {
@@ -214,3 +216,29 @@ percentButton.addEventListener('click', () => {
    operand = '';
    secondInput = '';
 })
+
+// keyboard functionality ==================================================================================
+document.addEventListener('keydown', (event) => {
+   checkDisplay();
+if(event.code === "Digit0") {
+   display.innerHTML += 0;
+} else if (event.code === "Digit1") {
+   display.innerHTML += 1;
+} else if (event.code === "Digit2") {
+   display.innerHTML += 2;
+} else if (event.code === "Digit3") {
+   display.innerHTML += 3;
+} else if (event.code === "Digit4") {
+   display.innerHTML += 4;
+} else if (event.code === "Digit5") {
+   display.innerHTML += 5;
+} else if (event.code === "Digit6") {
+   display.innerHTML += 6;
+} else if (event.code === "Digit7") {
+   display.innerHTML += 7;
+} else if (event.code === "Digit8") {
+   display.innerHTML += 8;
+} else if (event.code === "Digit9") {
+   display.innerHTML += 9;
+}
+}) 

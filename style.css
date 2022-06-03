@@ -53,6 +53,7 @@ button:hover {
     max-width: 300px;
     font-family: Andale Mono;
     text-shadow: 0 0 7px rgba(255, 255, 255, 0.325);
+    word-break: break-all;
 }
 
 #display {
@@ -62,6 +63,7 @@ button:hover {
     max-width: 300px;
     font-family: Andale Mono;
     text-shadow: 0 0 7px rgba(255, 255, 255, 0.325);
+    word-break: break-all;
 }
 
 #numberContainer {
